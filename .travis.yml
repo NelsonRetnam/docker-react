@@ -1,7 +1,5 @@
 sudo: required
 
-language: minimal
-
 services:
   - docker
 
@@ -9,4 +7,4 @@ before_install:
   - docker build -t nelsonr/docker-react -f Dockerfile.dev .
 
 script:
-    - docker run nelsonr/docker-react npm run test -- --watchAll=false
+    - docker run -e CI=true nelsonr/docker-react npm run test -- --coverage
