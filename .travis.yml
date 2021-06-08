@@ -1,5 +1,6 @@
 sudo: required
 language: generic
+install: travis_wait mvn install
 services:
   - docker
 
